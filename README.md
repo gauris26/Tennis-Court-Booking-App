@@ -1,6 +1,6 @@
-# tennis_court_reservation
+# Tennis Court Booking App
 
-A new Flutter project.
+Technical Coding Interview Test
 
 ## Getting Started
 
