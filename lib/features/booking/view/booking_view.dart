@@ -45,51 +45,60 @@ class BookingView extends StatefulWidgetView<BookingPage, BookingController> {
                               ),
                               Expanded(
                                 flex: 4,
-                                child: Container(
-                                  color: kBackGroundColor,
-                                  padding: const EdgeInsets.only(top: 130),
-                                  child: Column(
-                                    children: [
-                                      Padding(
-                                        padding: kSymmetricHorizontal,
-                                        child: TimeAndDurationPicker(
-                                          currentDateTime: controller.selectedDate,
-                                          onDurationChange: controller.onTimeRange,
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.vertical,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height,
+                                    color: kBackGroundColor,
+                                    padding: const EdgeInsets.only(top: 130),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: kSymmetricHorizontal,
+                                          child: TimeAndDurationPicker(
+                                            currentDateTime: controller.selectedDate,
+                                            onDurationChange: controller.onTimeRange,
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(height: 25),
-                                      Padding(
-                                        padding: kSymmetricHorizontal.copyWith(left: 0),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Expanded(flex: 2, child: Container()),
-                                            Expanded(
-                                              flex: 10,
-                                              child: ResponsiblePerson(
-                                                fbKey: controller.fbKey,
-                                                selectedDropDownItem: controller.onSelectedPerson,
+                                        const SizedBox(height: 25),
+                                        Padding(
+                                          padding: kSymmetricHorizontal.copyWith(left: 0),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Expanded(flex: 2, child: Container()),
+                                              Expanded(
+                                                flex: 10,
+                                                child: ResponsiblePerson(
+                                                  fbKey: controller.fbKey,
+                                                  selectedDropDownItem: controller.onSelectedPerson,
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(height: 25),
-                                      Padding(
-                                        padding: kSymmetricHorizontal,
-                                        child: CourtAvailability(
-                                          selectedCourt: controller.onSelectedCourt,
+                                        const SizedBox(height: 25),
+                                        Padding(
+                                          padding: kSymmetricHorizontal,
+                                          child: CourtAvailability(
+                                            selectedCourt: controller.onSelectedCourt,
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(height: 25),
-                                      Padding(
-                                        padding: kSymmetricHorizontal,
-                                        child: SwipeableConfirmButton(
-                                          onSwipeCompleted: controller.onSaveSchedule,
-                                          dismissible: !controller.perfomValidations().hasError,
+                                        const SizedBox(height: 25),
+                                        Padding(
+                                          padding: kSymmetricHorizontal,
+                                          child: SwipeableConfirmButton(
+                                            onSwipeCompleted: controller.onSaveSchedule,
+                                            dismissible: !controller.perfomValidations().hasError,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                        Flexible(
+                                          child: SizedBox(
+                                            height: 600,
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -97,13 +106,24 @@ class BookingView extends StatefulWidgetView<BookingPage, BookingController> {
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment(0, -0.8),
-                        child: IgnorePointer(
-                          ignoring: true,
-                          child: CurrentDateSelector(
-                            currentDateTime: controller.selectedDate,
-                          ),
+                      Positioned.fill(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Flexible(
+                              flex: 3,
+                              child: IgnorePointer(
+                                ignoring: true,
+                                child: CurrentDateSelector(
+                                  currentDateTime: controller.selectedDate,
+                                ),
+                              ),
+                            ),
+                            Spacer(
+                              flex: 2,
+                            ),
+                          ],
                         ),
                       ),
                     ],

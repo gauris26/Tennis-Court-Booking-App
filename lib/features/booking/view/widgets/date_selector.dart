@@ -34,7 +34,7 @@ class _DateSelectorState extends State<DateSelector> {
             return Container(
               width: MediaQuery.of(context).size.width / 3,
               child: Align(
-                alignment: Alignment(0, 0.365),
+                alignment: Alignment(0, 0.5),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,

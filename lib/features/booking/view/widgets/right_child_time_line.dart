@@ -59,7 +59,7 @@ class RightChildTimeline extends StatelessWidget {
                             SizedBox(width: 1),
                             Text(
                               step.court,
-                              textScaleFactor: 0.9,
+                              textScaleFactor: 0.85,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -87,7 +87,7 @@ class RightChildTimeline extends StatelessWidget {
                             SizedBox(width: 1),
                             Text(
                               step.durationReadable,
-                              textScaleFactor: 0.9,
+                              textScaleFactor: 0.85,
                               style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
                             ),
                           ],
