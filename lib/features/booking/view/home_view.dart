@@ -1,5 +1,5 @@
 import 'package:tennis_court_reservation/core/extensions.dart' show ExCourtRepository, DateTimeToCleanDate;
-import 'package:tennis_court_reservation/draft/entity/schedule.dart';
+import 'package:tennis_court_reservation/features/booking/domain/entities/schedule.dart';
 import 'package:tennis_court_reservation/core/constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widget_view/widget_view.dart';

@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-import '../draft/entity/schedule.dart';
+import '../features/domain_api.dart';
 import 'package:hive/hive.dart';
 
 extension DateTimeToCleanDate on DateTime {
@@ -31,7 +31,8 @@ extension DateTimeToCleanDate on DateTime {
   }
 
   bool get isPastDate => this.toUTCDate.compareTo(DateTime.now().toUTCDate.subtract(Duration(days: 1))) == 0;
-  bool get isToday => this.toUTCDate.compareTo(DateTime.now().toUTCDate.subtract(Duration(days: 1))) == 1;
+  //bool get isToday => this.toUTCDate.compareTo(DateTime.now().toUTCDate.subtract(Duration(days: 1))) == 1;
+  bool get isToday => this.toUTCDate.difference(DateTime.now().toUTCDate).inDays == 0;
 }
 
 extension ExCourtRepository on Box<ScheduleModel> {
@@ -46,4 +47,9 @@ extension ExCourtRepository on Box<ScheduleModel> {
 
     return list;
   }
+}
+
+//Unix Timestamp UTC Converter
+extension IntToDate on int {
+  DateTime get unixIntegerToDate => DateTime.fromMillisecondsSinceEpoch(this * 1000).toUtc();
 }

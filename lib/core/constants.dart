@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:tennis_court_reservation/draft/models/duration_value.dart';
+import '../features/domain_api.dart';
 
 const kAccentColor = const Color(0xFF323EA7);
 
@@ -20,6 +20,7 @@ final kFormatDateHumanRead = DateFormat("hh:mm a");
 
 const kSymmetricHorizontal = const EdgeInsets.symmetric(horizontal: 18);
 
+//const kOpenMapWeatherApiKey = "Open Weather Key Heare";
 const kOpenMapWeatherApiKey = "1d38bb57edef07e9bb61575b29d95c1b";
 
 const kOpenMapWeatherUrl =

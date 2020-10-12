@@ -1,9 +1,8 @@
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:tennis_court_reservation/draft/entity/schedule.dart';
-import 'package:tennis_court_reservation/draft/repository/i_court_repository.dart';
-import 'package:tennis_court_reservation/draft/repository/court_repository.dart';
-import 'package:tennis_court_reservation/draft/entity/person.dart';
-import 'package:tennis_court_reservation/draft/entity/court.dart';
+import 'package:tennis_court_reservation/features/booking/domain/entities/schedule.dart';
+import '../domain/interfaces/i_court_repository.dart';
+import 'package:tennis_court_reservation/features/booking/domain/entities/person.dart';
+import 'package:tennis_court_reservation/features/booking/domain/entities/court.dart';
 import 'package:tennis_court_reservation/core/injectable.dart';
 import '../../booking/state/court_booking_cubit.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +18,7 @@ class BookingPage extends StatefulWidget {
 }
 
 class BookingController extends State<BookingPage> with SingleTickerProviderStateMixin {
-  final CourtRepository _courtRepository = get<ICourtRepository>();
+  final ICourtRepository _courtRepository = get<ICourtRepository>(); //TODO
   final GlobalKey<FormBuilderState> fbKey = GlobalKey<FormBuilderState>();
   DateTime selectedDate;
   DateTimeRange selectedTimeRange;

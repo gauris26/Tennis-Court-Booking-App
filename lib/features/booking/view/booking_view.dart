@@ -1,9 +1,9 @@
-import 'package:tennis_court_reservation/draft/widgets/swipeable_confirm_button.dart';
-import 'package:tennis_court_reservation/draft/widgets/time_and_duration_picker.dart';
-import 'package:tennis_court_reservation/draft/widgets/current_date_selector.dart';
-import 'package:tennis_court_reservation/draft/widgets/court_availability.dart';
-import 'package:tennis_court_reservation/draft/widgets/responsible_person.dart';
-import 'package:tennis_court_reservation/draft/widgets/date_selector.dart';
+import 'package:tennis_court_reservation/features/booking/view/widgets/swipeable_confirm_button.dart';
+import 'package:tennis_court_reservation/features/booking/view/widgets/time_and_duration_picker.dart';
+import 'package:tennis_court_reservation/features/booking/view/widgets/current_date_selector.dart';
+import 'package:tennis_court_reservation/features/booking/view/widgets/court_availability.dart';
+import 'package:tennis_court_reservation/features/booking/view/widgets/responsible_person.dart';
+import 'package:tennis_court_reservation/features/booking/view/widgets/date_selector.dart';
 import 'package:tennis_court_reservation/core/constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../controller/booking_controller.dart';

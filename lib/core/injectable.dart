@@ -1,9 +1,13 @@
 import 'package:get_it/get_it.dart';
-import 'package:tennis_court_reservation/draft/repository/court_repository.dart';
-import 'package:tennis_court_reservation/draft/repository/i_court_repository.dart';
+import '../features/domain_api.dart';
+import 'package:hive/hive.dart';
 
 final get = GetIt.instance;
 
 void setupLocator() {
   get.registerLazySingleton<ICourtRepository>(() => CourtRepository());
+  get.registerLazySingleton<IWeatherManager>(() => WeatherManager());
+  get.registerSingleton<Box<ScheduleModel>>(Hive.box<ScheduleModel>('Schedules'));
+  get.registerSingleton<Box<PersonModel>>(Hive.box<PersonModel>('People'));
+  get.registerSingleton<Box<CourtModel>>(Hive.box<CourtModel>('Courts'));
 }
