@@ -20,8 +20,8 @@ final kFormatDateHumanRead = DateFormat("hh:mm a");
 
 const kSymmetricHorizontal = const EdgeInsets.symmetric(horizontal: 18);
 
-//const kOpenMapWeatherApiKey = "Open Weather Key Heare";
-const kOpenMapWeatherApiKey = "1d38bb57edef07e9bb61575b29d95c1b";
+const kOpenMapWeatherApiKey = "Open Weather Key Here";
+//const kOpenMapWeatherApiKey = "";
 
 const kOpenMapWeatherUrl =
     "https://api.openweathermap.org/data/2.5/onecall?lat=$kCourtLatitude&lon=$kCourtLongitude&appid=$kOpenMapWeatherApiKey&units=metric&exclude=current,minutely,hourly,alerts";
