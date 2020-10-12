@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tennis_court_reservation/core/constants.dart';
 import '../../domain/value_objects/step.dart';
+import '../../../../core/extensions.dart';
 
 class RightChildTimeline extends StatelessWidget {
   const RightChildTimeline({Key key, this.step}) : super(key: key);
@@ -29,6 +30,7 @@ class RightChildTimeline extends StatelessWidget {
                     "${step.title}",
                     style: GoogleFonts.nunito(
                       fontSize: 18,
+                      decoration: !step.isCheckpoint && step.dateTime.isOverdueDate ? TextDecoration.lineThrough : TextDecoration.none,
                       fontWeight: step.isCheckpoint ? FontWeight.bold : FontWeight.normal,
                       color: step.color,
                     ),

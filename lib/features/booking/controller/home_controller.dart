@@ -34,7 +34,9 @@ class HomeController extends State<HomePage> {
       MaterialPageRoute(builder: (_) => BookingPage()),
     );
 
-    Scaffold.of(context).showSnackBar(SnackBar(content: Text(message ?? "")));
+    if (message != null && message.isEmpty) {
+      Scaffold.of(context).showSnackBar(SnackBar(content: Text(message)));
+    }
   }
 
   Future<void> showConfirmationDialog({VoidCallback onPressed}) async {
@@ -69,6 +71,7 @@ class HomeController extends State<HomePage> {
     var step = StepTimeline(
       type: TypeTimeline.checkpoint,
       color: kAccentColor,
+      dateTime: dateKey,
       title: "\n" + dateKey.toHumanReadable,
       icon: Icons.calendar_today_outlined,
     );
@@ -112,6 +115,7 @@ class HomeController extends State<HomePage> {
       onIndicatorTap: () => showConfirmationDialog(
         onPressed: () => deleteSchedule(schedule),
       ),
+      dateTime: schedule.start,
       icon: Icons.calendar_today_outlined,
       hour: kFormatTime.format(schedule.start),
       duration: rangeDuration.inMinutes ~/ 30,
@@ -120,7 +124,7 @@ class HomeController extends State<HomePage> {
       durationReadable: prettyDuration(rangeDuration),
     );
 
-    final IndicatorStyle indicator = _indicatorStyleDelete(step, index);
+    final IndicatorStyle indicator = !schedule.start.isOverdueDate ? _indicatorStyleDelete(step, index) : IndicatorStyle(width: 0);
 
     final rightChild = RightChildTimeline(step: step);
 

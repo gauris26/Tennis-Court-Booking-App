@@ -6,8 +6,20 @@ enum TypeTimeline {
 }
 
 class StepTimeline {
-  StepTimeline({this.type, this.hour, this.onIndicatorTap, this.court, this.durationReadable, this.message, this.duration, this.color, this.icon, this.title});
+  StepTimeline(
+      {this.type,
+      this.hour,
+      this.dateTime,
+      this.onIndicatorTap,
+      this.court,
+      this.durationReadable,
+      this.message,
+      this.duration,
+      this.color,
+      this.icon,
+      this.title});
 
+  final DateTime dateTime;
   final String title;
   final String court;
   final String durationReadable;

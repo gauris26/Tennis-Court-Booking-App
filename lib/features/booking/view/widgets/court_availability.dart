@@ -31,7 +31,6 @@ class _CourtAvailabilityState extends State<CourtAvailability> {
             children: box.values.map(
               (court) {
                 int courtBooked = context.cubit.getCourtState(court.id);
-                print("Court ID: ${court.id}");
                 return Court(
                   key: ValueKey(court.id),
                   courtModel: court,

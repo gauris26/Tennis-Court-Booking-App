@@ -30,8 +30,7 @@ extension DateTimeToCleanDate on DateTime {
     return humanReadableText;
   }
 
-  bool get isPastDate => this.toUTCDate.compareTo(DateTime.now().toUTCDate.subtract(Duration(days: 1))) == 0;
-  //bool get isToday => this.toUTCDate.compareTo(DateTime.now().toUTCDate.subtract(Duration(days: 1))) == 1;
+  bool get isOverdueDate => !this.toUTCDateTime.isAfter(DateTime.now().toUTCDateTime);
   bool get isToday => this.toUTCDate.difference(DateTime.now().toUTCDate).inDays == 0;
 }
 
@@ -40,7 +39,7 @@ extension ExCourtRepository on Box<ScheduleModel> {
     List<ScheduleModel> list = [];
 
     this.values.forEach((element) {
-      if (element.end.toUTCDateTime.isAfter(DateTime.now().toUTCDateTime)) {
+      if (element.end.toUTCDateTime.isAfter(DateTime.now().toUTCDateTime) || element.start.isToday) {
         list.add(element);
       }
     });

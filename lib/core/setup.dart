@@ -43,7 +43,7 @@ void seed() {
   people.put(3, PersonModel(id: 3, name: "Sarah Hemingway", imageUrl: "https://tinyfac.es/data/avatars/A7299C8E-CEFC-47D9-939A-3C8CA0EA4D13-200w.jpeg"));
   people.put(4, PersonModel(id: 4, name: "Mary Amparo", imageUrl: "https://tinyfac.es/data/avatars/03F55412-DE8A-4F83-AAA6-D67EE5CE48DA-200w.jpeg"));
 
-  //var schedules = Hive.box<ScheduleModel>('Schedules');
+  var schedules = Hive.box<ScheduleModel>('Schedules');
   //schedules.deleteFromDisk();
-  //print(schedules.values);
+  print(schedules.values);
 }

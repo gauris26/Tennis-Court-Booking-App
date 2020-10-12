@@ -20,7 +20,6 @@ class ScheduleModel extends HiveObject {
   ScheduleModel({this.id, this.start, this.end, this.person, this.court});
 
   @override
-  String toString() {
-    return 'ScheduleModel{id: $id, start: $start, end: $end, person: $person, court: $court}';
-  }
+  String toString() => 'ScheduleModel{id: $id, start: $start, end: $end}'; //, person: $person, court: $court
+
 }
