@@ -1,7 +1,6 @@
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:intl/intl.dart';
 import 'package:tennis_court_reservation/core/constants.dart';
 
 typedef void DurationChange(DateTimeRange dateTime);

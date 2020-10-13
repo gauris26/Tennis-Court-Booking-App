@@ -7,5 +7,6 @@ export 'booking/controller/home_controller.dart';
 export 'booking/state/court_booking_cubit.dart';
 export 'booking/domain/value_objects/duration_value.dart';
 export 'booking/infrastructure/dto/weather_model.dart';
-export 'booking/infrastructure/network/weather_manager.dart';
-export 'booking/domain/interfaces/i_weather_manager.dart';
+export 'booking/infrastructure/network/weather_repository.dart';
+export 'booking/domain/interfaces/i_weather_repository.dart';
+export 'booking/domain/value_objects/weather.dart';

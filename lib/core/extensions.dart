@@ -52,3 +52,18 @@ extension ExCourtRepository on Box<ScheduleModel> {
 extension IntToDate on int {
   DateTime get unixIntegerToDate => DateTime.fromMillisecondsSinceEpoch(this * 1000).toUtc();
 }
+
+extension WeatherDTOConvert on WeatherModel {
+  List<Weather> get toDomain => this.daily.map((value) => Weather(value.dateTime, value.pop)).toList();
+}
+
+extension ListWeatherExtensions on List<Weather> {
+  Weather get todayWeather => this.singleWhere(
+        (element) => element.datetime.isToday,
+        orElse: () => Weather.empty(),
+      );
+}
+
+extension WeatherExtensions on Weather {
+  int get percent => (this.precipitation * 100).toInt();
+}

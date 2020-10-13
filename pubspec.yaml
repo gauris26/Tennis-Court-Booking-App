@@ -48,6 +48,7 @@ dependencies:
   widget_view: ^0.1.2+1
   flutter_bloc: ^6.0.6
   flutter_staggered_animations: ^0.1.2
+  dartz: ^0.9.2
 
 dev_dependencies:
   flutter_test:

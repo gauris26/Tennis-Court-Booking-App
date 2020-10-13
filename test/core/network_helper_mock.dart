@@ -1,14 +1,11 @@
-import 'dart:convert';
-
 import 'package:mockito/mockito.dart';
 import 'package:tennis_court_reservation/core/network_helper.dart';
 
 class NetworkHelperMock extends Mock implements NetworkHelper {
   @override
-  Future getData() async {
-    String data = cachedResponse;
+  Future<String> getResponseBody() async {
     await Future.delayed(Duration(milliseconds: 1000));
-    return jsonDecode(data);
+    return cachedResponse;
   }
 }
 

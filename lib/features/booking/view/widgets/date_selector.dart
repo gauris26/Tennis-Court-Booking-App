@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tennis_court_reservation/core/constants.dart';
-import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 
 typedef void DateTimeScrollChange(DateTime dateTime);

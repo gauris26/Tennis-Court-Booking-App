@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'features/domain_api.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'core/setup.dart';
 import 'core/injectable.dart';
 
-Future<void> main() {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setupHive().then((value) {
     seed();

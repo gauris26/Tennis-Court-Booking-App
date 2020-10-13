@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../../../../lib/features/booking/infrastructure/network/weather_manager.dart';
+import '../../../../../lib/features/booking/infrastructure/network/weather_repository.dart';
 import 'weather_manager_mock.dart';
 import 'package:get_it/get_it.dart';
 

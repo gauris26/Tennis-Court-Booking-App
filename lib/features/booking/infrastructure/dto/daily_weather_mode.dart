@@ -10,7 +10,7 @@ class Daily {
 
   Daily.fromJson(Map<String, dynamic> json) {
     dt = json['dt'];
-    pop = json['pop'];
+    pop = json['pop'].toDouble();
   }
 
   Map<String, dynamic> toJson() {
